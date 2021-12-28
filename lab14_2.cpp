@@ -21,3 +21,25 @@ int main()
     }while(s != 0 || x != 0 || y != 0);
     return 0;
 }
+
+void showImage(const bool img[N][M]){
+    cout << "------------------------------------------------------------------------\n";
+    for(int i = 0; i < 30; i++){
+        cout << "|";
+        for(int j = 0; j < 70; j++){
+            if(img[i][j] == 0) cout << " ";
+            if(img[i][j] == 1) cout << "*";
+        }
+        cout << "|\n";
+    }
+    cout << "------------------------------------------------------------------------";
+}
+
+void updateImage(bool img[][M],int s,int x,int y){
+    for(int i = 0; i < N; i++){
+        for(int j = 0; j < M ; j++){
+         if (sqrt(pow(i - x, 2) + pow(j - y, 2)) + 1 <= s )
+            img[i][j]=1; 
+        }
+    }
+}
